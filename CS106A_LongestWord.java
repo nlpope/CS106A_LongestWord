@@ -51,6 +51,6 @@ public class CS106A_LongestWord extends ConsoleProgram
 				longestWord = token;
 			}
 		}
-		return "The longest word is " + longestWord + ".";
+		return "The longest word is \"" + longestWord + "\".";
 	}
 }
