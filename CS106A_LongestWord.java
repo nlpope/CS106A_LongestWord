@@ -13,10 +13,17 @@ import java.util.*;
 public class CS106A_LongestWord extends ConsoleProgram
 {
 	/*Named Constants*/
+	static final private String SENTINEL = "exit";
 	static final private String DELIMITERS = "!@#$%^&*()_-+={[}]:;\"'<,>.?/~`/\\ ";
 	public void run()
 	{
-		//use a tokenizer in java.util
+		while (true){
+			String clientString = readLine("Enter a line: ");
+			if (clientString.equals(SENTINEL)){
+				println("goodbye."); break;
+			}
+			println(longestWord(clientString));
+		}
 		introduceApp();
 	}
 	
@@ -24,16 +31,21 @@ public class CS106A_LongestWord extends ConsoleProgram
 	private void introduceApp()
 	{
 		println("The CS106A_LongestWord class returns the " +
-				"longest word in a client provided string.");
+				"longest word in a client provided string. " +
+				"Type the word 'exit' to quit the program.");
 	}
 	
 	
 	private String longestWord(String line)
 	{
-		StringTokenizer tokenizer = new StringTokenizer(line);
+		StringTokenizer tokenizer = new StringTokenizer(line,DELIMITERS,false);
+		String longestWord = "";
 		while (tokenizer.hasMoreElements()){
-			tokenizer.nextToken();
+			String token = tokenizer.nextToken();
+			if (token.length() > longestWord.length()){
+				longestWord = token;
+			}
 		}
-		return "";
+		return "The longest word is " + longestWord + ".";
 	}
 }
