@@ -35,7 +35,12 @@ public class CS106A_LongestWord extends ConsoleProgram
 				"Type the word 'exit' to quit the program.");
 	}
 	
-	
+	/**
+	 * takes in client provided String and returns longest
+	 * word in the line
+	 * @param line The user provided string to be measured word for word.
+	 * @return a print statement denoting which word was the longest.
+	 * */
 	private String longestWord(String line)
 	{
 		StringTokenizer tokenizer = new StringTokenizer(line,DELIMITERS,false);
