@@ -17,6 +17,7 @@ public class CS106A_LongestWord extends ConsoleProgram
 	static final private String DELIMITERS = "!@#$%^&*()_-+={[}]:;\"'<,>.?/~`/\\ ";
 	public void run()
 	{
+		introduceApp();
 		while (true){
 			String clientString = readLine("Enter a line: ");
 			if (clientString.equals(SENTINEL)){
@@ -24,7 +25,6 @@ public class CS106A_LongestWord extends ConsoleProgram
 			}
 			println(longestWord(clientString));
 		}
-		introduceApp();
 	}
 	
 	
